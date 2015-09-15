@@ -18,38 +18,15 @@
   </head>
 
   <body>
-
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
-
-          <!--<div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Title</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>-->
-
           <div class="inner cover">
-            <h1 class="cover-heading">Em cần <a href="#" id="money" data-type="select" data-pk="1" data-url="/post" data-title="Chọn số tiền">2 <i class="glyphicon glyphicon-triangle-bottom"></i></a> triệu <a href="#" id="time" data-type="select" data-pk="1" data-url="/post" data-title="Chọn thời gian">đêm nay <i class="glyphicon glyphicon-triangle-bottom"></i></a></h1>
+            <h1 class="cover-heading">Em cần <a href="#" id="money" data-type="select"  data-title="Chọn số tiền">2 <i class="glyphicon glyphicon-triangle-bottom"></i></a> triệu <a href="#" id="time" data-type="select" data-title="Chọn thời gian">đêm nay <i class="glyphicon glyphicon-triangle-bottom"></i></a></h1>
             <p class="lead">
               <a href="#" class="btn btn-lg btn-danger">Vay Ngay</a>
             </p>
           </div>
-
-          <!--<div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>-->
         </div>
       </div>
     </div>
@@ -61,18 +38,22 @@
         $('#money').editable({
             value: 2,    
             source: [
-                {value: 1, text: '1 Triệu'},
-                {value: 2, text: '2 Triệu'},
-                {value: 3, text: '3 Triệu'}
-             ]
+                {value: 1, text: '1'},
+                {value: 2, text: '2'},
+                {value: 3, text: '3'}
+             ],
+             
         });
         $('#time').editable({
-            value: 2,    
+            value: 1,    
             source: [
-                {value: 1, text: 'Đêm nay'},
-                {value: 2, text: 'Ngày mai'},
-                {value: 3, text: 'Ngày kia'}
+                {value: 1, text: 'đêm nay'},
+                {value: 2, text: 'ngày mai'},
+                {value: 3, text: 'ngày kia'}
              ]
+        });
+        $('.btn-danger').on('click', function(event) {
+          window.location.replace('https://hungdv.typeform.com/to/ZX5UsF?money='+$('#money').text()+'&time='+$('#time').text());
         });
     });
     </script>
